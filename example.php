@@ -1,17 +1,24 @@
 <?php
-
+  // Current Directory
   $dir = __DIR__;
 
-  require_once $dir.'/dist/integration.php';
+  // Require Main Integration SDK file
+  require_once $dir.'/dist/integration.sdk.php';
 
-  $api_key = 'en.ipfs.MjY0.MTA2LjIyMy4yNDUuMjM3.24by4is53skn97uglqmnso';
+  // Enterprise API Key
+  $api_key = 'en.ipfs.xxxxxxxxxxxxxxxxxxxxxxxxx';
 
-  $endereum_ipfs_obj = new endereum_ipfs($api_key);
+  // Creating new endereum IPFS object
+  $endereum_ipfs = new endereum_ipfs($api_key);
 
-  $app_credential = $endereum_ipfs_obj->get_credentials();
+  // Get upload credentials
+  $app_credential = $endereum_ipfs->get_upload_credentials();
 
+  // Generate new upload credentials, incase upload credentials are not returned by the server
   if(false == $app_credential){
-    $app_credential = $endereum_ipfs_obj->generate_credentials();
+
+    // Generating new upload credentials
+    $app_credential = $endereum_ipfs->generate_upload_credentials();
   }
 ?>
 <!DOCTYPE html>
@@ -72,7 +79,7 @@
           <!-- Invisible Fields -->
           <div style="display: none; position absolute;">
             <!-- [[ user_id ]] -->
-            <input name="user_id" class="hidden" value="<?php echo $app_credential['user_id']; ?>" hidden />
+            <input name="user_id" class="hidden" value="<?php echo $app_credential['enterprise_id']; ?>" hidden />
 
             <!-- [[ connect_key ]] -->
             <input name="connect_key" class="hidden" value="<?php echo $app_credential['connect_key']; ?>" hidden />
