@@ -1,6 +1,6 @@
-# Endereum Enterprise IPFS SDK - PHP
+# Endereum Enterprise SDK - PHP
 
-Endereum enterprise IPFS SDK enables an enterprise to integrate our IPFS solution to its platform. To integrate this SDK, you need to follow certain steps listed below.
+Endereum enterprise SDK enables an enterprise to integrate our IPFS solution to its platform. To integrate this SDK (PHP), you need to follow certain steps listed below.
 1. Log in to your account
 2. Register your servers IP address from where you will call our API endpoints.
 3. Once you register your IP address then you can create an enterprise API key. You will need this API key to integrate our SDK with your platform.
@@ -33,14 +33,13 @@ You need to send these below-listed fields to our IPFS API server. After success
 2. Extract files of this repository into your root folder.
 3. RUN example.php
 4. Select file, set title and hit upload button
-5. Once your data is validated  and your files starts uploading to IPFS, you will see success message.
+5. Once your data is validated  and your files starts uploading to IPFS, you will see the success message.
 6. To view files, you can login to endereum dashboard. Or you can create download link.
 
 ### Creating download link
 1. Use the hash of the file you want to download. You can get the hash from your dashboard.
 2. Create download link like this: https://ipfs.enedereum.io/ipfs/----hash-of-the-file----
 3. Using this link, you can simply download the file.
-
 
 ## Update LOG
 
