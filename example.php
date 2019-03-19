@@ -3,7 +3,7 @@
   $dir = __DIR__;
 
   // Require Main Integration SDK file
-  require_once $dir.'/dist/integration.sdk.php';
+  require_once $dir.'/dist/integration.php';
 
   // Enterprise API Key
   $api_key = 'en.ipfs.xxxxxxxxxxxxxxxxxxxxxxxxx';
