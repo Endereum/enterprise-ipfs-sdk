@@ -20,6 +20,12 @@
     // Generating new upload credentials
     $app_credential = $endereum_ipfs->generate_upload_credentials();
   }
+
+  // Current URL
+  $current_url = strtok($_SERVER['REQUEST_URI'],'?');
+
+  // Get the assets location
+  $resource_url = str_replace('example.php', '', $current_url);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -40,7 +46,7 @@
     crossorigin="anonymous">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/example-assets/css/style.min.css">
+  <link rel="stylesheet" href="<?php echo $resource_url; ?>example-assets/css/style.min.css">
 </head>
 
 <body>
@@ -170,9 +176,9 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="/example-assets/js/jquery.form.js"></script>
-  <script src="/example-assets/js/file.extensions.js"></script>
-  <script src="/example-assets/js/main.js"></script>
+  <script src="<?php echo $resource_url; ?>example-assets/js/jquery.form.js"></script>
+  <script src="<?php echo $resource_url; ?>example-assets/js/file.extensions.js"></script>
+  <script src="<?php echo $resource_url; ?>example-assets/js/main.js"></script>
 
 </body>
 </html>
